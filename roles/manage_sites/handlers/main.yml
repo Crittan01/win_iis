@@ -1,0 +1,9 @@
+---
+# handlers file for roles/manage_sites
+
+# Handlers para reiniciar IIS
+- name: Reiniciar IIS
+  ansible.windows.win_service:
+    name: W3SVC
+    start_mode: auto
+    state: restarted

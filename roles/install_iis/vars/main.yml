@@ -1,0 +1,33 @@
+---
+# vars file for roles/install_iis
+
+install_iis_features:
+  - Web-Server
+  - NET-Framework-45-Core
+  - Web-Asp-Net
+  - Web-Mgmt-Console
+  - Web-Mgmt-Service
+  - Web-Windows-Auth
+  - Web-ASP
+  - Web-CGI
+  - Web-ISAPI-Ext
+  - Web-ISAPI-Filter
+  - Web-Scripting-Tools
+  - Web-Static-Content
+  - Web-Http-Logging
+  - Web-Http-Tracing
+  - Web-Request-Monitor
+  - Web-Performance
+  - Web-Log-Libraries
+  - Web-WebServer
+  - Web-Common-Http
+  - Web-Default-Doc
+  - Web-Dir-Browsing
+  - Web-Http-Errors
+  - Web-Http-Redirect
+  - Web-App-Dev
+  - Web-Net-Ext
+  - Web-Security
+  - Web-Basic-Auth
+  - Web-Filtering
+  - Web-Mgmt-Compat

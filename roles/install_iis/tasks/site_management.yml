@@ -1,0 +1,38 @@
+---
+# 1. Verificar si el sitio ya existe
+- name: Verificar si el sitio de IIS ya existe
+  community.windows.win_iis_website:
+    name: "{{ iis_site_name }}"
+  register: site_exists
+  ignore_errors: true
+  tags:
+    - site
+
+# 2. Crear el sitio si no existe
+- name: Crear sitio IIS si no existe
+  community.windows.win_iis_website:
+    name: "{{ iis_site_name }}"
+    state: "{{ iis_site_state }}"
+    port: "{{ iis_site_port }}"
+    physical_path: "{{ iis_site_root }}"
+  when: site_exists is failed
+  tags:
+    - site
+
+# 3. Modificar estado del sitio si ya existe
+- name: Modificar el estado del sitio si existe
+  community.windows.win_iis_website:
+    name: "{{ iis_site_name }}"
+    state: "{{ iis_site_state }}"
+  when: site_exists is succeeded
+  tags:
+    - site
+
+# 4. Eliminar el sitio si se especifica en las variables
+- name: Eliminar sitio IIS
+  community.windows.win_iis_website:
+    name: "{{ iis_site_name }}"
+    state: absent
+  when: iis_site_state == "absent"
+  tags:
+    - site

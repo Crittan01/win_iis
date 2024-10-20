@@ -1,0 +1,7 @@
+---
+# vars file for roles/manage_sites
+
+iis_site_name: DefaultWebSite
+iis_site_port: 80
+iis_site_root: "C:\\inetpub\\wwwroot"
+iis_site_state: started # Opciones: started, stopped, absent

@@ -1,0 +1,10 @@
+---
+# Este archivo controla qué tareas se ejecutan
+
+# 1. Instalar IIS y características adicionales
+
+- name: Instalar IIS y características adicionales
+  ansible.windows.win_feature:
+    name: "{{ install_iis_features }}"
+    state: present
+  notify: Reiniciar IIS

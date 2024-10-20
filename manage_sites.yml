@@ -1,0 +1,8 @@
+---
+- name: Creacion de sitios de IIS en Windows Server
+  hosts: windows_servers
+  become: false
+  gather_facts: false
+
+  roles:
+    - manage_sites

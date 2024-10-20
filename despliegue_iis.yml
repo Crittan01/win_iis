@@ -1,0 +1,9 @@
+---
+- name: Instalación y Configuración de IIS con Sitio en Windows Server
+  hosts: windows_servers
+  become: false
+  gather_facts: false
+
+  roles:
+    - install_iis
+    - manage_sites
